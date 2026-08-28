@@ -50,7 +50,42 @@ class Vegetable(Plant):
 
 def main() -> None:
 	print("Garden plant typesss")
-#ESCREVER O RESTANTE DO CODIGO AQUI
+
+	flower_data: list[tuple[str, int, int, str]] = [
+		("rose", 1, 5, "red"),
+		#colocar mais aqui
+	]
+
+	tree_data: list[tuple[str, int, int, str]] = [
+		("oak", 800, 4000, 30),
+		#colocar mais aqui
+	]
+
+	vegetable_data: list[tuple[str, int, int, str, str]] = [
+		("tomato", 50, 80, "summer", "vitamin c"),
+		#colocar mais aqui
+	]
+	plants: list[Plant] = []
+
+	for name, height, age, color in flower_data:
+		plant: Flower = Flower(name, height, age, color)
+		plants.append(plant)
+
+	for name, height, age, diameter in tree_data:
+		plant: Tree = Tree(name, height, age, diameter)
+		plants.append(plant)
+
+	for name, height, age, harvest_season, nutri_value in vegetable_data:
+		plant: Vegetable = Vegetable(name, height, age, harvest_season, nutri_value)
+		plants.append(plant)
+
+	for plant in plants:
+		plant.get_info()
+		if isinstance(plant, Flower):
+			plant.bloom()
+		elif isinstance(plant, Tree):
+			plant.produce_shade()
+		print() if plant != plants[-1] else None
 
 if __name__ == "__main__":
 	main()
