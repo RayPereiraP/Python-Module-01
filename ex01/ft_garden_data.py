@@ -1,16 +1,25 @@
-class Plant:
-	def __init__(self, name: str, height: int, age: int) -> None:
-		self.name: str = name
-		self.height: int = height
-		self.age: int = age
+#!/usr/bin/env python3
 
-	def main() -> None:
-		plant1: Plant = Plant("rose", 1, 5)
-		plant2: Plant = ("cosmos", 40, 12)
-		plant3: Plant = Plant("black bat", 100, 30)
-		print(f"{plant1.name}: {plant1.height} heigth, {plant1.age} days old")
-		print(f"{plant2.name}: {plant2.height} heigth, {plant2.age} days old")
-		print(f"{plant3.name}: {plant3.height} heigth, {plant3.age} days old")
+class Plant:
+    def __init__(self, name: str, height: int, plant_age: int) -> None:
+        self.name: str = name
+        self.height: int = height
+        self.plant_age: int = plant_age
+
+    def show(self) -> None:
+        print(f"{self.name}: {self.height}cm, {self.plant_age} days old")
+
+
+def main() -> None:
+    print("=== Garden Plant Registry ===")
+    plant1: Plant = Plant("Rose", 25, 30)
+    plant2: Plant = Plant("Sunflower", 80, 45)
+    plant3: Plant = Plant("Cactus", 15, 120)
+
+    plant1.show()
+    plant2.show()
+    plant3.show()
+
 
 if __name__ == "__main__":
-	main()
+    main()
